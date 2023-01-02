@@ -11,12 +11,16 @@ public class PlayerControl : MonoBehaviour
     Transform tr;
     Animation anim;
 
-    void Start()
+    IEnumerator Start()
     {
         tr = GetComponent<Transform>();
         anim = GetComponent<Animation>();
 
         anim.Play("Idle");
+
+        turn_speed = 0;
+        yield return new WaitForSeconds(0.3f);
+        turn_speed = 80;
     }
 
     void Update()
