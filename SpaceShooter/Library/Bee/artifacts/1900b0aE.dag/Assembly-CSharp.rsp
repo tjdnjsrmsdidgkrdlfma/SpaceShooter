@@ -363,6 +363,7 @@
 "Assets/02. Scripts/BulletControl.cs"
 "Assets/02. Scripts/FireControl.cs"
 "Assets/02. Scripts/FollowCamera.cs"
+"Assets/02. Scripts/MonsterControl.cs"
 "Assets/02. Scripts/MyGizmos.cs"
 "Assets/02. Scripts/PlayerControl.cs"
 "Assets/02. Scripts/RemoveBullet.cs"

@@ -70,6 +70,7 @@
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\GunShoot.cs" />
+    <Compile Include="Assets\02. Scripts\MonsterControl.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\GunAim.cs" />
   </ItemGroup>
   <ItemGroup>

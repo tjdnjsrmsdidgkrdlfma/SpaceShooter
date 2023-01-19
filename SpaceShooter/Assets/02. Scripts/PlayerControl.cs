@@ -8,11 +8,19 @@ public class PlayerControl : MonoBehaviour
     public float move_speed = 10f;
     public float turn_speed = 80f;
 
+    readonly float init_hp = 100;
+    public float curr_hp;
+
     Transform tr;
     Animation anim;
 
+    public delegate void PlayerDieHandler();
+    public static event PlayerDieHandler OnPlayerDie;
+
     IEnumerator Start()
     {
+        curr_hp = init_hp;
+
         tr = GetComponent<Transform>();
         anim = GetComponent<Animation>();
 
@@ -50,5 +58,26 @@ public class PlayerControl : MonoBehaviour
             anim.CrossFade("RunL", 0.25f);
         else
             anim.CrossFade("Idle", 0.25f);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(curr_hp >= 0 && other.CompareTag("Punch"))
+        {
+            curr_hp -= 10;
+            Debug.Log($"Player hp = {curr_hp / init_hp}");
+
+            if(curr_hp <= 0)
+            {
+                PlayerDie();
+            }
+        }
+    }
+
+    void PlayerDie()
+    {
+        Debug.Log("Player Die!");
+
+        OnPlayerDie();
     }
 }
