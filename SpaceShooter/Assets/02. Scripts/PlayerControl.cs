@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerControl : MonoBehaviour
 
     readonly float init_hp = 100;
     public float curr_hp;
+    Image hp_bar;
+
 
     Transform tr;
     Animation anim;
@@ -19,6 +22,8 @@ public class PlayerControl : MonoBehaviour
 
     IEnumerator Start()
     {
+        hp_bar = GameObject.FindGameObjectWithTag("HPBar")?.GetComponent<Image>();
+
         curr_hp = init_hp;
 
         tr = GetComponent<Transform>();
@@ -65,6 +70,8 @@ public class PlayerControl : MonoBehaviour
         if(curr_hp >= 0 && other.CompareTag("Punch"))
         {
             curr_hp -= 10;
+            DisplayHealth();
+
             Debug.Log($"Player hp = {curr_hp / init_hp}");
 
             if(curr_hp <= 0)
@@ -79,5 +86,10 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("Player Die!");
 
         OnPlayerDie();
+    }
+
+    void DisplayHealth()
+    {
+        hp_bar.fillAmount = curr_hp / init_hp;
     }
 }
