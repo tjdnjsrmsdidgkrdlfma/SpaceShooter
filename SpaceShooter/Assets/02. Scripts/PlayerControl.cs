@@ -13,7 +13,6 @@ public class PlayerControl : MonoBehaviour
     public float curr_hp;
     Image hp_bar;
 
-
     Transform tr;
     Animation anim;
 
@@ -86,6 +85,8 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("Player Die!");
 
         OnPlayerDie();
+
+        GameManager.instance.IsGameOver = true;
     }
 
     void DisplayHealth()

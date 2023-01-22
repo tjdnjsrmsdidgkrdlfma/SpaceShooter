@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  trace_dist: 10
+  trace_dist: 50
   attack_dist: 2
   is_die: 0
 --- !u!1 &6128329169311351039

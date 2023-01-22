@@ -62,6 +62,7 @@
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\02. Scripts\PlayerControl.cs" />
     <Compile Include="Assets\02. Scripts\MyGizmos.cs" />
+    <Compile Include="Assets\02. Scripts\UIManager.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\02. Scripts\BulletControl.cs" />
@@ -72,7 +73,7 @@
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\02. Scripts\MonsterControl.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\02. Scripts\UIManager.cs" />
+    <Compile Include="Assets\02. Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -759,6 +760,9 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
@@ -774,11 +778,11 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
@@ -809,9 +813,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
