@@ -130,19 +130,22 @@ public class MonsterControl : MonoBehaviour
         if(other.collider.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
-            anim.SetTrigger(hash_hit);
+        }
+    }
 
-            Vector3 pos = other.GetContact(0).point;
-            Quaternion rot = Quaternion.LookRotation(-other.GetContact(0).normal);
-            ShowBloodEffect(pos, rot);
+    public void OnDamage(Vector3 pos, Vector3 normal)
+    {
+        anim.SetTrigger(hash_hit);
 
-            hp -= 10;
-            if (hp <= 0)
-            {
-                state = State.DIE;
+        Quaternion rot = Quaternion.LookRotation(normal);
+        ShowBloodEffect(pos, rot);
 
-                GameManager.instance.DisplayScore(50);
-            }
+        hp -= 30;
+        if (hp <= 0)
+        {
+            state = State.DIE;
+
+            GameManager.instance.DisplayScore(50);
         }
     }
 

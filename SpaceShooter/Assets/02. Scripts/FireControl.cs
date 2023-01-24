@@ -12,6 +12,8 @@ public class FireControl : MonoBehaviour
     new AudioSource audio;
     MeshRenderer muzzle_flash;
 
+    RaycastHit hit;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -22,8 +24,23 @@ public class FireControl : MonoBehaviour
 
     void Update()
     {
+        Debug.DrawRay(fire_pos.position, fire_pos.forward * 10, Color.green);
+
         if(Input.GetMouseButtonDown(0))
+        {
             Fire();
+
+            if (Physics.Raycast(fire_pos.position,
+                                fire_pos.forward,
+                                out hit,
+                                10,
+                                1 << 6))
+            {
+                Debug.Log($"Hit={hit.transform.name}");
+
+                hit.transform.GetComponent<MonsterControl>()?.OnDamage(hit.point, hit.normal);
+            }
+        }
     }
 
     void Fire()

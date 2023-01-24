@@ -63,6 +63,7 @@
     <Compile Include="Assets\02. Scripts\PlayerControl.cs" />
     <Compile Include="Assets\02. Scripts\MyGizmos.cs" />
     <Compile Include="Assets\02. Scripts\UIManager.cs" />
+    <Compile Include="Assets\02. Scripts\GameManager.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\02. Scripts\BulletControl.cs" />
@@ -73,7 +74,6 @@
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\02. Scripts\MonsterControl.cs" />
     <Compile Include="Assets\03. Prefabs\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\02. Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
