@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         _monster?.transform.SetPositionAndRotation(points[idx].position, 
                                                    points[idx].rotation);
 
-        _monster.SetActive(true);
+        _monster?.SetActive(true);
     }
 
     void CreateMonsterPool()
