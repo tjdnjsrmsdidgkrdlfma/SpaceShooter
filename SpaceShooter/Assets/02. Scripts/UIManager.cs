@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        action = () => OnButtonClick(start_button.name);
+        action = () => OnStartClick();
 
         start_button.onClick.AddListener(action);
 
@@ -27,5 +28,11 @@ public class UIManager : MonoBehaviour
     public void OnButtonClick(string msg)
     {
         Debug.Log($"Click Button : {msg}");
+    }
+
+    public void OnStartClick()
+    {
+        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Play", LoadSceneMode.Additive);
     }
 }
